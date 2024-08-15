@@ -8,6 +8,7 @@ import Sort from "../../сomponents/sort/Sort"
 import projectImgOne from '../../img/project_one.jpg'
 import projectImgTwo from '../../img/project_two.jpg'
 import './homePage.css'
+import Footer from "../../сomponents/footer/Footer"
 
 const HomePage = () => {
 
@@ -113,7 +114,9 @@ const HomePage = () => {
             <ProjectList projects={projects} />
           </section>
         </div>
+
       </main>
+			<Footer/>
     </>
   )
 }

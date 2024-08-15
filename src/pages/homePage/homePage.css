@@ -9,7 +9,8 @@
 
 .section {
   width: 80%;
-	margin-top: 22px;
+	padding-top: 22px;
+  padding-bottom: 116px;
 }
 
 .section-top {
