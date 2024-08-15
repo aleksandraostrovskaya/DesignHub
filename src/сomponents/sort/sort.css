@@ -9,14 +9,11 @@
   background-color: #fff;
 	box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.25);
 	border-radius: 24px;
-	opacity: 0;
-	transform: translateX(100%);
-	transition: all 0.3s ease-in-out;
+	display: none;
 }
 
 .sort.visible {
-	opacity: 1;
-	transform: translateX(0); 
+	display: block;
 }
 
 .sort h2 {

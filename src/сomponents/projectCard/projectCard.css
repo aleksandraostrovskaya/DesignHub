@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-  overflow: hidden;
+  /* overflow: hidden; */
+  position: relative;
 }
 
 .project-image-container {
@@ -57,4 +58,34 @@
   align-items: center;
   gap: 4px;
   font-size: 12px;
+}
+
+
+.context-menu {
+  position: absolute;
+  bottom: -62%;
+  right: 0%;
+  padding: 16px;
+  max-width: 184px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.context-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.context-menu li {
+  /* padding: 5px 10px; */
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #efefef;
+  }
 }

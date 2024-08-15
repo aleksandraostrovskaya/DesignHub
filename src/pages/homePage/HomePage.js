@@ -76,18 +76,18 @@ const HomePage = () => {
 	]
 		
 	return (
-    <div className="home-page">
+    <>
       <Header />
       <Banner />
 
-      <main className="home-page__main">
-        <div className="container home-page__container--flex">
-          <aside className="home-page__aside">
+      <main className="main">
+        <div className="container container--flex">
+          <aside className="aside">
             <Filter />
           </aside>
 
-          <section className="home-page__section">
-            <div className="home-page__section-top">
+          <section className="section">
+            <div className="section-top">
               <div className="tags">
                 <button className="tags__tag"># Landscapes</button>
                 <button className="tags__tag"># Foto</button>
@@ -105,16 +105,16 @@ const HomePage = () => {
               </div>
             </div>
 
-            <h2 className="home-page__title">New projects</h2>
+            <h2 className="title">New projects</h2>
             <ProjectList projects={projects} />
-            <h2 className="home-page__title" style={{ marginTop: "56px" }}>
+            <h2 className="title" style={{ marginTop: "56px" }}>
               Top projects
             </h2>
             <ProjectList projects={projects} />
           </section>
         </div>
       </main>
-    </div>
+    </>
   )
 }
 

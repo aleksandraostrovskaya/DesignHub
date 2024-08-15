@@ -1,25 +1,25 @@
-.home-page__container--flex {
+.container--flex {
   display: flex;
 }
 
-.home-page__aside {
+.aside {
   width: 20%;
 	margin-top: 22px;
 }
 
-.home-page__section {
+.section {
   width: 80%;
 	margin-top: 22px;
 }
 
-.home-page__section-top {
+.section-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 33px;
 }
 
-.home-page__title {
+.title {
   font-weight: 400;
   font-size: 32px;
   color: #000;

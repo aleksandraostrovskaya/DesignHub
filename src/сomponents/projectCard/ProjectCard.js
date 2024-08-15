@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './projectCard.css';
 
 import moreOptionsIcon from '../../img/icon/more_options.svg';
@@ -6,6 +6,13 @@ import likeIcon from '../../img/icon/like_card.svg'
 import ViewIcon from '../../img/icon/view_card.svg'
 
 const ProjectCard = ({ title, author, views, likes, daysAgo, image }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
+
   return (
     <div className="project-card">
       <div className="project-image-container">
@@ -14,9 +21,20 @@ const ProjectCard = ({ title, author, views, likes, daysAgo, image }) => {
       <div className="project-info">
         <div className="project-header">
           <h3 className="project-title">{title}</h3>
-          <button className="more-options">
+          <button className="more-options" onClick={toggleMenu}>
             <img src={moreOptionsIcon} alt="more options" />
           </button>
+          {isMenuOpen && (
+            <div className="context-menu">
+              <ul>
+                <li>Save</li>
+                <li>Share</li>
+                <li>Do not recommend work from this category</li>
+                <li>Block the author</li>
+                <li>Report</li>
+              </ul>
+            </div>
+          )}
         </div>
         <p className="project-author">{author}</p>
         <div className="project-stats">
