@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './projectCard.css';
 
 import moreOptionsIcon from '../../img/icon/more_options.svg';
@@ -7,10 +7,26 @@ import ViewIcon from '../../img/icon/view_card.svg'
 
 const ProjectCard = ({ title, author, views, likes, daysAgo, image }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null)
+  const buttonRef = useRef(null);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(prevState => !prevState);
   }
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target) && buttonRef.current && !buttonRef.current.contains(event.target)) {
+        setIsMenuOpen(false)
+      } 
+    }
+    
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [])
 
 
   return (
@@ -21,11 +37,11 @@ const ProjectCard = ({ title, author, views, likes, daysAgo, image }) => {
       <div className="project-info">
         <div className="project-header">
           <h3 className="project-title">{title}</h3>
-          <button className="more-options" onClick={toggleMenu}>
+          <button ref={buttonRef} className="more-options" onClick={toggleMenu}>
             <img src={moreOptionsIcon} alt="more options" />
           </button>
           {isMenuOpen && (
-            <div className="context-menu">
+            <div ref={menuRef} className="context-menu">
               <ul>
                 <li>Save</li>
                 <li>Share</li>

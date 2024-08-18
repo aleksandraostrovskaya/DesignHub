@@ -14,8 +14,8 @@ const HomePage = () => {
 
 	const [isSortVisible, setIsSortVisible] = useState(false);
 
-	const handleSortButtonClick = () => {
-		setIsSortVisible(!isSortVisible);
+	const toggleSortVisibility = () => {
+		setIsSortVisible((prevIsSortVisible) => !prevIsSortVisible);
 	}
 	
 	const projects = [
@@ -98,11 +98,12 @@ const HomePage = () => {
               <div className="sort-controls">
                 <button
                   className="sort-controls__button"
-                  onClick={handleSortButtonClick}
+                  onClick={toggleSortVisibility}
+									id="sortButton"
                 >
                   Sort Images
                 </button>
-                <Sort isVisible={isSortVisible} />
+                <Sort isVisible={isSortVisible} onClose={toggleSortVisibility}/>
               </div>
             </div>
 

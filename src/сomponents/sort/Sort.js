@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import FilterSection from '../filterSection/FilterSection'
 import './sort.css'
 
 
-const Sort = ({isVisible}) => {
+const Sort = ({isVisible, onClose}) => {
+  const sortRef = useRef(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sortRef.current && !sortRef.current.contains(event.target) && event.target.id !== 'sortButton') {
+        onClose()
+      }
+    }
+    
+    if (isVisible) {
+      document.addEventListener('mousedown', handleClickOutside)
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isVisible, onClose])
+
+
   return (
-    <div className={`sort ${isVisible ? 'visible' : ''}`}>
+    <div ref={sortRef} className={`sort ${isVisible ? 'visible' : ''}`}>
       <div className="sort-header">
         <h2>Sort</h2>
         <button>Clear Search</button>
