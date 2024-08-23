@@ -5,22 +5,23 @@ import moreOptionsIcon from '../../img/icon/more_options.svg';
 import likeIcon from '../../img/icon/like_card.svg'
 import ViewIcon from '../../img/icon/view_card.svg'
 
-const ProjectCard = ({ title, author, views, likes, daysAgo, image }) => {
+const ProjectCard = ({ title, author, views, likes, daysAgo, image, authorAvatar, tags, onProjectClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null)
   const buttonRef = useRef(null);
 
-  const toggleMenu = () => {
+  const toggleMenu = (event) => {
+    event.stopPropagation()
     setIsMenuOpen(prevState => !prevState);
   }
 
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target) && buttonRef.current && !buttonRef.current.contains(event.target)) {
+      setIsMenuOpen(false)
+    } 
+  }
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target) && buttonRef.current && !buttonRef.current.contains(event.target)) {
-        setIsMenuOpen(false)
-      } 
-    }
-    
     document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
@@ -28,11 +29,17 @@ const ProjectCard = ({ title, author, views, likes, daysAgo, image }) => {
     }
   }, [])
 
+  const handleCardClick = () => {
+    if (onProjectClick) {
+      onProjectClick({ title, author, views, likes, daysAgo, image, tags, authorAvatar });
+    }
+  };
+
 
   return (
-    <div className="project-card">
+    <div className="project-card" onClick={handleCardClick}>
       <div className="project-image-container">
-        <img src={image} alt={title} className="project-image" />
+        <img src={image} alt={title} loading="lazy" className="project-image" />
       </div>
       <div className="project-info">
         <div className="project-header">

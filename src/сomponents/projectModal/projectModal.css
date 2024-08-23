@@ -1,0 +1,155 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	z-index: 100;
+
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.modal-container {
+  background: #fff;
+  padding: 44px;
+  border-radius: 24px;
+  max-width: 1148px;
+  width: 90%;
+  height: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  transform: scale(0.7);
+  animation: scaleIn 0.3s forwards;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 40px;
+  right: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 16px;
+	font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.modal-published {
+	font-size: 12px;
+  color: #000;
+}
+
+.modal-content {
+  display: flex;
+}
+
+.modal-image {
+  max-width: 698px;
+  width: 100%;
+  height: auto;
+}
+
+.modal-details {
+  margin-left: 20px;
+}
+
+.modal-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.author-avatar {
+  width: 52px;
+  height: 52px;
+  margin-right: 13px;
+}
+
+.author-name {
+  font-weight: 400;
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.subscribe-button {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 12px;
+  cursor: pointer;
+  position: absolute;
+  top: 4px;
+  right: 0;
+}
+
+.modal-actions {
+  margin-bottom: 125px;
+}
+
+.modal-actions div{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.modal-actions button {
+  border: none;
+  cursor: pointer;
+  border-radius: 51px;
+  font-size: 16px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.rate-button {
+  background-color:  #40a6ff;
+  padding: 16px 49px;
+  color: #fff;
+}
+
+.share-button {
+  background-color: #efefef;
+  padding: 16px 28px;
+
+}
+
+.message-button {
+  background-color: #efefef;
+  padding: 16px 49px;
+  width: 100%;
+}
+
+.modal-details .tags {
+  flex-wrap: wrap;
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+  }
+}

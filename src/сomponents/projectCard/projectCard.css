@@ -1,6 +1,7 @@
 .project-card {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   border-radius: 4px;
   /* overflow: hidden; */
   position: relative;
@@ -9,10 +10,12 @@
 .project-image-container {
   overflow: hidden; 
   margin-bottom: 12px;
+  object-fit: cover;
 }
 
 .project-image {
   width: 100%;
+  height: 244px;
   transition: transform 0.3s ease; 
 
   &:hover {
@@ -59,7 +62,6 @@
   gap: 4px;
   font-size: 12px;
 }
-
 
 .context-menu {
   position: absolute;

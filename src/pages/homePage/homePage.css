@@ -5,6 +5,8 @@
 .aside {
   width: 20%;
 	margin-top: 22px;
+  max-width: 248px;
+  margin-right: 30px;
 }
 
 .section {
