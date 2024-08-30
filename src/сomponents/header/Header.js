@@ -11,7 +11,17 @@ const Header = () => {
 					<a href='#' className="header__logo">LOGO</a>
 						<nav className="header__nav">
 							<ul className="header__nav-list">
-								<li className="header__nav-li"><a href="#">Projects</a></li>
+								<li className="header__nav-li">
+									<a href="#">Projects</a>
+								<ul className="dropdown">
+                  <li><a href="#">Project 1</a></li>
+                  <li><a href="#">Project 2</a></li>
+									<div className='dropdown-divider'></div>
+                  <li><a href="#">For you</a></li>
+                  <li><a href="#">Illustration</a></li>
+                  <li><a href="#">Graphic design</a></li>
+                  <li><a href="#">Photo</a></li>
+                </ul></li>
 								<li className="header__nav-li"><a href="#">Vacancies</a></li>
 								<li className="header__nav-li"><a href="#">Specialists</a></li>
 								<li className="header__nav-li"><a href="#">Education</a></li>

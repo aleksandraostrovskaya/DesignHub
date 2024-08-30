@@ -43,11 +43,15 @@
     transition: transform 0.3s ease;
   }
 
-  &:hover {
+  &:hover:not(:first-child) {
     &::before {
       transform: scaleX(1);
     }
   }
+
+	&:hover .dropdown {
+		display: block;
+	}
 
 	&:first-child {
 		position: relative;
@@ -121,3 +125,34 @@
 	font-size: 16px;
 	border: none;
 }
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 16px;
+	border-radius: 4px;
+  list-style: none;
+  margin: 0;
+  width: 186px;
+  z-index: 103;
+}
+
+.dropdown li:not(:last-child){
+  margin-bottom: 20px;
+}
+
+.dropdown-divider {
+	border: .3px solid #ebe8e8;
+	margin-bottom: 20px;
+	width: 154px;
+}
+
+.dropdown li a {
+  color: #000;
+  display: block;
+}
+
