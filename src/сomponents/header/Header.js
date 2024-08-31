@@ -2,13 +2,14 @@ import React from 'react';
 import './header.css';
 
 import bellIcon from '../../img/icon/bell.svg'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
     <header className="header">
       <div className="container header-container">
 				<div className="header__left">
-					<a href='#' className="header__logo">LOGO</a>
+					<Link to="/" className="header__logo">LOGO</Link>
 						<nav className="header__nav">
 							<ul className="header__nav-list">
 								<li className="header__nav-li">
@@ -22,7 +23,7 @@ const Header = () => {
                   <li><a href="#">Graphic design</a></li>
                   <li><a href="#">Photo</a></li>
                 </ul></li>
-								<li className="header__nav-li"><a href="#">Vacancies</a></li>
+								<li className="header__nav-li"><Link to="/vacancies">Vacancies</Link></li>
 								<li className="header__nav-li"><a href="#">Specialists</a></li>
 								<li className="header__nav-li"><a href="#">Education</a></li>
 								<li className="header__nav-li"><a href="#">Support</a></li>

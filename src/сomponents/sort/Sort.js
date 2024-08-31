@@ -1,15 +1,20 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import FilterSection from '../filterSection/FilterSection'
 import './sort.css'
 
 
-const Sort = ({isVisible, onClose}) => {
+const Sort = () => {
   const sortRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false);
+  
+  const toggleSortVisibility = () => {
+    setIsVisible((prevIsVisible) => !prevIsVisible);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sortRef.current && !sortRef.current.contains(event.target) && event.target.id !== 'sortButton') {
-        onClose()
+        setIsVisible(false);
       }
     }
     
@@ -22,10 +27,14 @@ const Sort = ({isVisible, onClose}) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isVisible, onClose])
+  }, [isVisible])
 
 
   return (
+    <div style={{position: 'relative'}}>
+      <button className="sort-button" onClick={toggleSortVisibility} id="sortButton">
+        Sort Images
+      </button>
     <div ref={sortRef} className={`sort ${isVisible ? 'visible' : ''}`}>
       <div className="sort-header">
         <h2>Sort</h2>
@@ -72,6 +81,7 @@ const Sort = ({isVisible, onClose}) => {
             By number of views 
           </label>
         </FilterSection>
+    </div>
     </div>
   );
 };

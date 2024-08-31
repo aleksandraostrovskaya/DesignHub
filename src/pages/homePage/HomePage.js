@@ -14,13 +14,7 @@ import './homePage.css'
 
 
 const HomePage = () => {
-
-	const [isSortVisible, setIsSortVisible] = useState(false)
 	const [selectedProject, setSelectedProject] = useState(null)
-
-	const toggleSortVisibility = () => {
-		setIsSortVisible((prevIsSortVisible) => !prevIsSortVisible);
-	}
 	
 	const projects = [
 		{
@@ -92,6 +86,29 @@ const HomePage = () => {
 		
 	]
 
+	const filterData = [
+    {
+      title: "By content type",
+      items: ["Photographs", "Video", "Vector", "Drawings", "3D"]
+    },
+    {
+      title: "Orientation",
+      items: ["Horizontal", "Vertical"]
+    },
+    {
+      title: "By size",
+      items: ["Small", "Medium", "Large"]
+    },
+    {
+      title: "By color scheme",
+      items: ["By color scheme", "Specific color", "Color"]
+    },
+    {
+      title: "By popularity",
+      items: ["Most viewed", "Most commented", "Most liked"]
+    }
+  ]
+
 	const handleProjectClick = (project) => {
 		setSelectedProject(project);
 	}
@@ -108,7 +125,7 @@ const HomePage = () => {
       <main className="main">
         <div className="container container--flex">
           <aside className="aside">
-            <Filter />
+            <Filter sections={filterData}/>
           </aside>
 
           <section className="section">
@@ -119,19 +136,7 @@ const HomePage = () => {
                 <button className="tags__tag"># Landscapes</button>
                 <button className="tags__tag"># Architecture</button>
               </div>
-              <div className="sort-controls">
-                <button
-                  className="sort-controls__button"
-                  onClick={toggleSortVisibility}
-                  id="sortButton"
-                >
-                  Sort Images
-                </button>
-                <Sort
-                  isVisible={isSortVisible}
-                  onClose={toggleSortVisibility}
-                />
-              </div>
+							<Sort />
             </div>
 
             <h2 className="title">New projects</h2>

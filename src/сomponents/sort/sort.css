@@ -12,6 +12,21 @@
 	display: none;
 }
 
+.sort-button {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 51px;
+  padding: 16px 28px;
+  width: 248px;
+  height: 44px;
+  background-color: #efefef;
+  font-size: 16px;
+  color: #000;
+  text-align: left;
+  cursor: pointer;
+}
+
 .sort.visible {
 	display: block;
 }

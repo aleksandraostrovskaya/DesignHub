@@ -13,9 +13,15 @@ body, h1, h2, h3, h4, h5, h6, div, span, ol, ul, li, p {
 
 body {
   overflow-x: hidden;
+  background-color: #f8f8f8;
 }
 
 ol, ul {
 	list-style: none;
 }
 
+.container {
+	max-width: 1398px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
