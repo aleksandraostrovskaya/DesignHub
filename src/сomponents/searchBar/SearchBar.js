@@ -1,7 +1,19 @@
+import { useState } from 'react'
 import Sort from '../sort/Sort'
 import './searchBar.css'
 
-const SearchBar = () => {
+const SearchBar = ({onSearchChange}) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+
+  const handleSearchInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  }
+
+  const handleSearchClick = () => {
+    onSearchChange(searchTerm);
+  }
+
 	return (
     <div className="search-bar container">
       <div className="employment-type">
@@ -12,8 +24,8 @@ const SearchBar = () => {
 
 			<div className="controls-container">
       <div className="search-controls">
-        <input type="text" placeholder="Search" />
-        <button className="search-button">Search</button>
+        <input type="text" placeholder="Search" onChange={handleSearchInputChange}/>
+        <button className="search-button" onClick={handleSearchClick}>Search</button>
       </div>
         <Sort />
 			</div>

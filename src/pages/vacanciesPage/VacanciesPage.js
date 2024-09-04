@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Banner from '../../сomponents/banner/Banner'
 import Filter from '../../сomponents/filter/Filter'
 import Footer from '../../сomponents/footer/Footer'
@@ -20,7 +21,7 @@ const VacanciesPage = () => {
     {id: 1, company: "Company", title: "Art Director / 3D Designer", description: "Art Director / 3D Designer, at FRAME, remote or in-house.", type: "office", date: "3 days ago", logo: companyLogo},
     {id: 1, company: "Company", title: "Art Director / 3D Designer", description: "Art Director / 3D Designer, at FRAME, remote or in-house.", type: "office", date: "3 days ago", logo: companyLogo},
     {id: 1, company: "Company", title: "Art Director / 3D Designer", description: "Art Director / 3D Designer, at FRAME, remote or in-house.", type: "office", date: "3 days ago", logo: companyLogo},
-    {id: 1, company: "Company", title: "Art Director / 3D Designer", description: "Art Director / 3D Designer, at FRAME, remote or in-house.", type: "office", date: "3 days ago", logo: companyLogo},
+    {id: 1, company: "Company", title: "something", description: "Art Director / 3D Designer, at FRAME, remote or in-house.", type: "office", date: "3 days ago", logo: companyLogo},
   ]
 
 	const filterData = [
@@ -45,16 +46,17 @@ const VacanciesPage = () => {
       items: ["300$", "700$", "1000$"]
     }
   ]
-  // const [filteredVacancies, setFilteredVacancies] = useState(vacancies);
-  // const [isSearching, setIsSearching] = useState(false);
 
-  // const handleSearch = (searchTerm) => {
-  //   const results = vacancies.filter(vacancy =>
-  //     vacancy.title.toLowerCase().includes(searchTerm.toLowerCase())
-  //   );
-  //   setFilteredVacancies(results);
-  //   setIsSearching(true);
-  // };
+  const [filteredVacancies, setFilteredVacancies] = useState(allVacancies);
+  const [isSearching, setIsSearching] = useState(false);
+
+  const handleSearch = (searchTerm) => {
+    const results = allVacancies.filter(vacancy =>
+      vacancy.title.toLowerCase().includes(searchTerm.toLowerCase().trim())
+    );
+    setFilteredVacancies(results);
+    setIsSearching(true);
+  };
 
     // const handleFilter = (filterCriteria) => {
   //   // Логика фильтрации
@@ -68,7 +70,7 @@ const VacanciesPage = () => {
 		<>
 			<Header/>
 			<Banner/>
-			<SearchBar/>
+			<SearchBar onSearchChange={handleSearch}/>
 
 			<main className='main'>
 				<div className="container container--flex">
@@ -76,7 +78,12 @@ const VacanciesPage = () => {
             <Filter sections={filterData}/>
           </aside>
           <section className="section">
-            <VacanciesList vacancies={allVacancies} />
+            <p className="results-count">{`${allVacancies.length} results`}</p>
+          {isSearching && filteredVacancies.length === 0 ? (
+              <p>No vacancies found for your search.</p>
+            ) : (
+              <VacanciesList vacancies={isSearching ? filteredVacancies : allVacancies} />
+            )}
           </section>
 				</div>
 			</main>
