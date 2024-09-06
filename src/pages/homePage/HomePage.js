@@ -136,7 +136,7 @@ const HomePage = () => {
                 <button className="tags__tag"># Landscapes</button>
                 <button className="tags__tag"># Architecture</button>
               </div>
-							<Sort />
+							<Sort name="Sort Images"/>
             </div>
 
             <h2 className="title">New projects</h2>

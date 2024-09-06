@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Sort from '../sort/Sort'
 import './searchBar.css'
 
-const SearchBar = ({onSearchChange}) => {
+const SearchBar = ({nameSort, onSearchChange}) => {
   const [searchTerm, setSearchTerm] = useState('');
 
 
@@ -27,7 +27,7 @@ const SearchBar = ({onSearchChange}) => {
         <input type="text" placeholder="Search" onChange={handleSearchInputChange}/>
         <button className="search-button" onClick={handleSearchClick}>Search</button>
       </div>
-        <Sort />
+        <Sort name="Sort vacancies"/>
 			</div>
 
     </div>

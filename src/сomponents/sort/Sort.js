@@ -3,7 +3,7 @@ import FilterSection from '../filterSection/FilterSection'
 import './sort.css'
 
 
-const Sort = () => {
+const Sort = ({name}) => {
   const sortRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false);
   
@@ -33,7 +33,7 @@ const Sort = () => {
   return (
     <div style={{position: 'relative'}}>
       <button className="sort-button" onClick={toggleSortVisibility} id="sortButton">
-        Sort Images
+        {name}
       </button>
     <div ref={sortRef} className={`sort ${isVisible ? 'visible' : ''}`}>
       <div className="sort-header">

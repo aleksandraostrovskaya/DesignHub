@@ -29,15 +29,9 @@ const ProjectCard = ({ title, author, views, likes, daysAgo, image, authorAvatar
     }
   }, [])
 
-  const handleCardClick = () => {
-    if (onProjectClick) {
-      onProjectClick({ title, author, views, likes, daysAgo, image, tags, authorAvatar });
-    }
-  };
-
 
   return (
-    <div className="project-card" onClick={handleCardClick}>
+    <div className="project-card" onClick={() => onProjectClick?.({ title, author, views, likes, daysAgo, image, tags, authorAvatar })}>
       <div className="project-image-container">
         <img src={image} alt={title} loading="lazy" className="project-image" />
       </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './projectModal.css';
+import styles from './projectModal.module.css';
 
 import likeIcon from '../../img/icon/like_card.svg'
 import viewIcon from '../../img/icon/view_card.svg'
@@ -26,36 +26,36 @@ const ProjectModal = ({ project, onClose }) => {
 
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-container" ref={modalRef}>
-        <button className="modal-close-button" onClick={onClose}>
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalContainer} ref={modalRef}>
+        <button className={styles.modalCloseButton} onClick={onClose}>
           <img src={closeButtonIcon} alt="close-button" />
         </button>
 
-        <div className="modal-header">
-          <h2 className="modal-title">{project.title}</h2>
-          <p className="modal-published">
+        <div className={styles.modalHeader}>
+          <h2 className={styles.modalTitle}>{project.title}</h2>
+          <p className={styles.modalPublished}>
             Published {project.daysAgo} days ago
           </p>
         </div>
 
-        <div className="modal-content">
+        <div className={styles.modalContent}>
           <img
             src={project.image}
             alt={project.title}
-            className="modal-image"
+            className={styles.modalImage}
           />
 
-          <div className="modal-details">
-            <div className="modal-author">
+          <div className={styles.modalDetails}>
+            <div className={styles.modalAuthor}>
               <img
                 src={project.authorAvatar}
                 alt={project.author}
-                className="author-avatar"
+                className={styles.authorAvatar}
               />
               <div>
-                <h3 className="author-name">{project.author}</h3>
-                <div className="project-stats">
+                <h3 className={styles.authorName}>{project.author}</h3>
+                <div className={styles.projectStats}>
                   <span>
                     <img src={likeIcon} alt="likes" />
                     {project.likes}
@@ -66,22 +66,22 @@ const ProjectModal = ({ project, onClose }) => {
                   </span>
                 </div>
               </div>
-              <button className="subscribe-button">Subscribe</button>
+              <button className={styles.subscribeButton}>Subscribe</button>
             </div>
 
-            <div className="modal-actions">
+            <div className={styles.modalActions}>
               <div>
-                <button className="rate-button">Rate the work</button>
-                <button className="share-button">Share</button>
+                <button className={styles.rateButton}>Rate the work</button>
+                <button className={styles.shareButton}>Share</button>
               </div>
-              <button className="message-button">
+              <button className={styles.messageButton}>
                 Send a message to the author
               </button>
             </div>
 
-            <div className="tags">
+            <div className={styles.tags}>
               {project.tags.map(tag => (
-                <button className="tags__tag">{tag}</button>
+                <button key={tag} className={styles.tag}>{tag}</button>
               ))}
             </div>
           </div>
@@ -92,3 +92,4 @@ const ProjectModal = ({ project, onClose }) => {
 };
 
 export default ProjectModal;
+

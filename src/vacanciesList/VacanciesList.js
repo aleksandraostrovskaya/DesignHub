@@ -2,18 +2,14 @@ import VacancyCard from '../сomponents/vacancyCard/VacancyCard'
 
 import './vacanciesList.css';
 
-const VacanciesList = ({ vacancies }) => {
+const VacanciesList = ({ vacancies, onVacancyClick }) => {
   return (
     <div className="vacancies-list">
         {vacancies.map(vacancy => (
           <VacancyCard
             key={vacancy.id}
-            company={vacancy.company}
-            title={vacancy.title}
-            description={vacancy.description}
-            type={vacancy.type}
-            date={vacancy.date}
-            logo={vacancy.logo}
+            vacancy={vacancy}
+            onVacancyClick={onVacancyClick}
           />
         ))}
       </div>

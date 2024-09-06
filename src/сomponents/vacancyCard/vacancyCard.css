@@ -19,9 +19,9 @@
   margin-right: 8px;
 }
 
-.vacancy-card__company {
-  color: #000;
-  font-size: 16px;
+.vacancy-card__department {
+  color: #888;
+  font-size: 12px;
 }
 
 .vacancy-card__description {
