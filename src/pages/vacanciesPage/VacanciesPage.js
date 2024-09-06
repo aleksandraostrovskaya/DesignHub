@@ -199,7 +199,7 @@ const VacanciesPage = () => {
             <Filter sections={filterData}/>
           </aside>
           <section className="section">
-            <p className="results-count">{`${allVacancies.length} results`}</p>
+            <p className="results-count">{`${isSearching ? filteredVacancies.length : allVacancies.length} results`}</p>
           {isSearching && filteredVacancies.length === 0 ? (
               <p>No vacancies found for your search.</p>
             ) : (
