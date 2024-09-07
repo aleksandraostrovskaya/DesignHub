@@ -3,8 +3,11 @@ import './header.css';
 
 import bellIcon from '../../img/icon/bell.svg'
 import { Link } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const Header = () => {
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+
   return (
     <header className="header">
       <div className="container header-container">
@@ -33,9 +36,19 @@ const Header = () => {
 
         <div className="header__actions">
           <input type="text" placeholder="Search" className="header__search" />
-					<img src={bellIcon} alt="bell" />
-          <button className="header__login">Login</button>
-          <button className="header__register">Registration</button>
+          {isAuthenticated ? (
+            <>
+              <button className="header__share">Share the project</button>
+					    <img src={bellIcon} alt="bell" />
+              <img src={user.picture} alt="User" className="header__avatar"/>
+            </>
+          ) : (
+            <>
+					    <img src={bellIcon} alt="bell" />
+              <button className="header__login" onClick={() => loginWithRedirect()}>Login</button>
+              <button className="header__register" onClick={() => loginWithRedirect({ screen_hint: 'signup' })}>Registration</button>
+            </>
+          )}
         </div>
       </div>
     </header>

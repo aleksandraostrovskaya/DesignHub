@@ -156,3 +156,24 @@
   display: block;
 }
 
+.header__share {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #ddd;
+	border-radius: 51px;
+	padding: 16px 28px;
+	width: auto;
+	height: 44px;
+	background-color: #efefef;
+	font-size: 16px;
+	color: #000;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.header__avatar {
+	border-radius: 40px;
+	width: 43px;
+	height: 43px;
+}
