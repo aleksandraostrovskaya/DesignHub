@@ -1,4 +1,4 @@
-import VacancyCard from '../сomponents/vacancyCard/VacancyCard'
+import VacancyCard from '../vacancyCard/VacancyCard'
 
 import './vacanciesList.css';
 

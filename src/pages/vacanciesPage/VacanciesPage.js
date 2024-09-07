@@ -4,11 +4,11 @@ import Filter from '../../сomponents/filter/Filter'
 import Footer from '../../сomponents/footer/Footer'
 import Header from '../../сomponents/header/Header'
 import SearchBar from '../../сomponents/searchBar/SearchBar'
-import VacanciesList from '../../vacanciesList/VacanciesList'
+import VacancyModal from '../../сomponents/vacancyModal/VacancyModal'
+import VacanciesList from '../../сomponents/vacanciesList/VacanciesList'
 
 import './vacanciesPage.css';
 import companyLogo from '../../img/authorPhoto.jpg'
-import VacancyModal from '../../сomponents/vacancyModal/VacancyModal'
 
 const VacanciesPage = () => {
 
