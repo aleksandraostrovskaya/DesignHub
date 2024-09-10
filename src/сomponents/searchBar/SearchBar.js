@@ -27,7 +27,7 @@ const SearchBar = ({nameSort, onSearchChange}) => {
         <input type="text" placeholder="Search" onChange={handleSearchInputChange}/>
         <button className="search-button" onClick={handleSearchClick}>Search</button>
       </div>
-        <Sort name="Sort vacancies"/>
+        <Sort name={nameSort}/>
 			</div>
 
     </div>
