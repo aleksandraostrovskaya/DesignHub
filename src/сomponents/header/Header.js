@@ -20,11 +20,12 @@ const Header = () => {
 								<ul className="dropdown">
                   <li><a href="#">Project 1</a></li>
                   <li><a href="#">Project 2</a></li>
+                  <li><a href="#">Project 2</a></li>
 									<div className='dropdown-divider'></div>
-                  <li><a href="#">For you</a></li>
-                  <li><a href="#">Illustration</a></li>
-                  <li><a href="#">Graphic design</a></li>
-                  <li><a href="#">Photo</a></li>
+                  <li><a href="#">New projects</a></li>
+                  <li><a href="#">Recommended projects</a></li>
+                  <li><a href="#">Search projects</a></li>
+                  <li><a href="#">Search projects by categories</a></li>
                 </ul></li>
 								<li className="header__nav-li"><Link to="/vacancies">Vacancies</Link></li>
 								<li className="header__nav-li"><Link to="/specialists">Specialists</Link></li>
