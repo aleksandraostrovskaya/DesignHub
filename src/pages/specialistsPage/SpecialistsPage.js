@@ -9,6 +9,7 @@ import logoOne from '../../img/expertise_1.jpg'
 import logoTwo from '../../img/expertise_2.jpg'
 import logoThree from '../../img/expertise_3.jpg'
 import logoFour from '../../img/expertise_4.jpg'
+import Footer from "../../сomponents/footer/Footer"
 
 const SpecialistsPage = () => {
 	const filterData = [
@@ -252,6 +253,7 @@ const SpecialistsPage = () => {
 				</section>
 			</div>
 		</main>
+		<Footer/>
 		</> 
 	);
 }
