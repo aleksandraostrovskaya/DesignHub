@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/homePage/HomePage';
 import VacanciesPage from './pages/vacanciesPage/VacanciesPage'
+import SpecialistsPage from './pages/specialistsPage/SpecialistsPage'
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage/>} />
         <Route path='/vacancies' element={<VacanciesPage/>} />
+        <Route path='/specialists' element={<SpecialistsPage/>} />
       </Routes>
       </BrowserRouter>
     </div>

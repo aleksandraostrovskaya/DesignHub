@@ -27,7 +27,7 @@ const Header = () => {
                   <li><a href="#">Photo</a></li>
                 </ul></li>
 								<li className="header__nav-li"><Link to="/vacancies">Vacancies</Link></li>
-								<li className="header__nav-li"><a href="#">Specialists</a></li>
+								<li className="header__nav-li"><Link to="/specialists">Specialists</Link></li>
 								<li className="header__nav-li"><a href="#">Education</a></li>
 								<li className="header__nav-li"><a href="#">Support</a></li>
 							</ul>
