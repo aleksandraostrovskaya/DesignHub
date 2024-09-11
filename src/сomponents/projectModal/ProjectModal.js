@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './projectModal.module.css';
 
 import likeIcon from '../../img/icon/like_card.svg'
@@ -6,12 +6,12 @@ import viewIcon from '../../img/icon/view_card.svg'
 import closeButtonIcon from '../../img/icon/close-btn.svg'
 
 const ProjectModal = ({ project, onClose }) => {
-
+  const [isClosing, setIsClosing] = useState(false);
   const modalRef = useRef(null)
 
   const handleClickOutside = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
-      onClose()
+      setIsClosing(true);
     }
   }
 
@@ -24,11 +24,18 @@ const ProjectModal = ({ project, onClose }) => {
     
   }, [onClose])
 
+  useEffect(() => {
+    if (isClosing) {
+      const timeout = setTimeout(onClose, 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [isClosing, onClose]);
+
 
   return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContainer} ref={modalRef}>
-        <button className={styles.modalCloseButton} onClick={onClose}>
+    <div className={`${styles.modalOverlay} ${isClosing ? styles.fadeOut : ''}`}>
+      <div className={`${styles.modalContainer} ${isClosing ? styles.scaleOut : ''}`} ref={modalRef}>
+        <button className={styles.modalCloseButton} onClick={() => setIsClosing(true)}>
           <img src={closeButtonIcon} alt="close-button" />
         </button>
 
