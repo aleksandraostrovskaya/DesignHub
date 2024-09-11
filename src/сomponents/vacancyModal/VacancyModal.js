@@ -1,14 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import closeButtonIcon from '../../img/icon/close-btn.svg';
 
 import styles from './vacancyModal.module.css';
 
 const VacancyModal = ({ vacancy, onClose }) => {
+  const [isClosing, setIsClosing] = useState(false);
   const modalRef = useRef(null);
 
   const handleClickOutside = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
-      onClose();
+      setIsClosing(true);
     }
   };
 
@@ -20,10 +21,17 @@ const VacancyModal = ({ vacancy, onClose }) => {
     };
   }, [onClose]);
 
+  useEffect(() => {
+    if (isClosing) {
+      const timeout = setTimeout(onClose, 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [isClosing, onClose]);
+
   return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContainer} ref={modalRef}>
-        <button className={styles.close} onClick={onClose}>
+    <div className={`${styles.modalOverlay} ${isClosing ? styles.fadeOut : ''}`}>
+      <div className={`${styles.modalContainer} ${isClosing ? styles.scaleOut : ''}`} ref={modalRef}>
+        <button className={styles.close} onClick={() => setIsClosing(true)}>
           <img src={closeButtonIcon} alt="close-button" />
         </button>
 
@@ -65,4 +73,3 @@ const VacancyModal = ({ vacancy, onClose }) => {
 };
 
 export default VacancyModal;
-
