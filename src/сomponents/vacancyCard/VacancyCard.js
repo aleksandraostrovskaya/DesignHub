@@ -4,9 +4,6 @@ import './vacancyCard.css';
 import moreOptionsIcon from '../../img/icon/more_options-gray.svg';
 import starIcon from '../../img/icon/favorite_star.svg';
 
-const VacancyCard = ({ vacancy, onVacancyClick }) => {
-  const { company, jobTitle, previewDescription, department, jobPostedDate, image } = vacancy;
-
   // Функция для расчета количества дней назад
   const daysAgo = (dateString) => {
     const date = new Date(dateString);
@@ -18,6 +15,9 @@ const VacancyCard = ({ vacancy, onVacancyClick }) => {
     return `${differenceInDays} days ago`;
   };
 
+const VacancyCard = ({ vacancy, onVacancyClick }) => {
+  const { company, jobTitle, previewDescription, department, jobPostedDate, image } = vacancy;
+  
   const formattedDate = daysAgo(jobPostedDate);
 
 
@@ -48,5 +48,5 @@ const VacancyCard = ({ vacancy, onVacancyClick }) => {
   );
 };
 
-export default VacancyCard;
+export {VacancyCard, daysAgo};
 

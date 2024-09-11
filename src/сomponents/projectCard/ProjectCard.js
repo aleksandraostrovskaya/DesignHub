@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './projectCard.css';
+import { daysAgo } from '../vacancyCard/VacancyCard';
 
 import moreOptionsIcon from '../../img/icon/more_options.svg';
 import likeIcon from '../../img/icon/like_card.svg'
 import ViewIcon from '../../img/icon/view_card.svg'
 
-const ProjectCard = ({ title, author, views, likes, daysAgo, image, authorAvatar, tags, onProjectClick }) => {
+const ProjectCard = ({ title, author, views, likes, postedDate, image, authorAvatar, tags, onProjectClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null)
   const buttonRef = useRef(null);
+
+  const formattedDate = daysAgo(postedDate);
 
   const toggleMenu = (event) => {
     event.stopPropagation()
@@ -63,7 +66,7 @@ const ProjectCard = ({ title, author, views, likes, daysAgo, image, authorAvatar
             <img src={ViewIcon} alt="views" />
             {views}
           </span>
-          <span className="project-date">{daysAgo} days ago</span>
+          <span className="project-date">{formattedDate}</span>
         </div>
       </div>
     </div>
