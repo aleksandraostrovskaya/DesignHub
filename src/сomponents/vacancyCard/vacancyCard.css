@@ -9,6 +9,12 @@
 
 .vacancy-card__header {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.vacancy-card__header-left {
+  display: flex;
   align-items: center;
 }
 
@@ -47,4 +53,26 @@
 .vacancy-card__date {
   font-size: 12px;
   color: #000;
+}
+
+.vacancy-card__icons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.vacancy-card__options-btn, .vacancy-card__favorite-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.vacancy-card:hover .vacancy-card__icons {
+  visibility: visible;
+  opacity: 1;
 }
