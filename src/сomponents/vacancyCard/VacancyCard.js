@@ -7,6 +7,20 @@ import starIcon from '../../img/icon/favorite_star.svg';
 const VacancyCard = ({ vacancy, onVacancyClick }) => {
   const { company, jobTitle, previewDescription, department, jobPostedDate, image } = vacancy;
 
+  // Функция для расчета количества дней назад
+  const daysAgo = (dateString) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const differenceInMillis = now - date;
+    const millisecondsPerDay = 1000 * 60 * 60 * 24;
+    const differenceInDays = Math.floor(differenceInMillis / millisecondsPerDay);
+
+    return `${differenceInDays} days ago`;
+  };
+
+  const formattedDate = daysAgo(jobPostedDate);
+
+
   return (
     <div 
       className="vacancy-card" 
@@ -29,7 +43,7 @@ const VacancyCard = ({ vacancy, onVacancyClick }) => {
       </div>
       <h2 className="vacancy-card__title">{jobTitle}</h2>
       <p className="vacancy-card__description">{previewDescription}</p>
-      <p className="vacancy-card__date">{jobPostedDate}</p>
+      <p className="vacancy-card__date">{formattedDate}</p>
     </div>
   );
 };
