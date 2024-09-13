@@ -10,9 +10,9 @@ const SearchBar = ({nameSort, onSearchChange}) => {
     setSearchTerm(event.target.value);
   }
 
-  const handleSearchClick = () => {
-    onSearchChange(searchTerm);
-  }
+  // const handleSearchClick = () => {
+  //   onSearchChange(searchTerm);
+  // }
 
 	return (
     <div className="search-bar container">
@@ -25,7 +25,7 @@ const SearchBar = ({nameSort, onSearchChange}) => {
 			<div className="controls-container">
       <div className="search-controls">
         <input type="text" placeholder="Search" onChange={handleSearchInputChange}/>
-        <button className="search-button" onClick={handleSearchClick}>Search</button>
+        <button className="search-button" >Search</button>
       </div>
         <Sort name={nameSort}/>
 			</div>

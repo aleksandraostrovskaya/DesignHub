@@ -171,13 +171,13 @@ const VacanciesPage = () => {
     setSelectedVacancy(null);
   };
 
-  const handleSearch = (searchTerm) => {
-    const results = allVacancies.filter(vacancy =>
-      vacancy.jobTitle.toLowerCase().includes(searchTerm.toLowerCase().trim())
-    );
-    setFilteredVacancies(results);
-    setIsSearching(true);
-  };
+  // const handleSearch = (searchTerm) => {
+  //   const results = allVacancies.filter(vacancy =>
+  //     vacancy.jobTitle.toLowerCase().includes(searchTerm.toLowerCase().trim())
+  //   );
+  //   setFilteredVacancies(results);
+  //   setIsSearching(true);
+  // };
 
     // const handleFilter = (filterCriteria) => {
   //   // Логика фильтрации
@@ -191,7 +191,7 @@ const VacanciesPage = () => {
 		<>
 			<Header/>
 			<Banner/>
-			<SearchBar nameSort="Sort vacancies" onSearchChange={handleSearch}/>
+			<SearchBar nameSort="Sort vacancies" />
 
 			<main className='main'>
 				<div className="container container--flex">
