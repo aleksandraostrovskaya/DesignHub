@@ -142,7 +142,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Header postSearchContent={postSearchContent} />
+      <Header/>
       <Banner text="Gorgeous long inscription"/>
 
       <main className="main">

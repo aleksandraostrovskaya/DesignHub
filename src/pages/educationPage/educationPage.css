@@ -68,10 +68,6 @@
     gap: 8px;
 }
 
-.aside {
-    margin-right: 16px;
-}
-
 .results-count {
     display: flex;
     flex-direction: column;

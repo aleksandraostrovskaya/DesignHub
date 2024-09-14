@@ -1,6 +1,5 @@
 import React from 'react';
 import './header.css';
-import { Link } from 'react-router-dom';
 
 import bellIcon from '../../img/icon/bell.svg'
 import { Link } from 'react-router-dom'
@@ -30,8 +29,8 @@ const Header = () => {
                 </ul></li>
 								<li className="header__nav-li"><Link to="/vacancies">Vacancies</Link></li>
 								<li className="header__nav-li"><Link to="/specialists">Specialists</Link></li>
-								<li className="header__nav-li"><a href="#">Education</a></li>
-								<li className="header__nav-li"><a href="#">Support</a></li>
+								<li className="header__nav-li"><Link to="/education">Education</Link></li>
+								<li className="header__nav-li"><Link to="/support">Support</Link></li>
 							</ul>
 						</nav>
 				</div>

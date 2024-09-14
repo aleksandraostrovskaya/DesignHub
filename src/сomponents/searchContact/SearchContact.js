@@ -1,16 +1,18 @@
-import React from 'react'
-import './SearchContact.css'
-import { Link } from 'react-router-dom'
-
+import React from 'react';
+import styles from './SearchContact.module.css';
+import { Link } from 'react-router-dom';
 
 const SearchContact = ({ text, link }) => {
   return (
-    <section className="search-section">
-        <input type="text" placeholder="Search" className="search-bar" />
-        <input type="search" placeholder="Search" className="search-blue"/>
-        <button className="contact-button"><Link to={link}>{text}</Link></button>
+    <section className={styles.searchSection}>
+        <input type="text" placeholder="Search" className={styles.searchBar} />
+        <input type="search" placeholder="Search" className={styles.searchBlue} />
+        <button className={styles.contactButton}>
+          <Link to={link}>{text}</Link>
+        </button>
     </section>
   );
 };
 
-export default SearchContact
+export default SearchContact;
+

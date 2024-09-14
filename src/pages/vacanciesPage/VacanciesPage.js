@@ -188,25 +188,12 @@ const VacanciesPage = () => {
   //   // Логика сортировки
   // };
 
-  const postSearchContent = (
-		<>
-		  <img src={bellIcon} alt="bell" />
-		  <button className="header__login">Login</button>
-		  <button className="header__register">Registration</button>
-		</>
-	  );
 
 	return (
 		<>
-<<<<<<< HEAD
-			<Header postSearchContent={postSearchContent} />
-			<Banner text="Gorgeous long inscription"/>
-			<SearchBar onSearchChange={handleSearch}/>
-=======
 			<Header/>
 			<Banner/>
 			<SearchBar nameSort="Sort vacancies" />
->>>>>>> upstream/main
 
 			<main className='main'>
 				<div className="container container--flex">
