@@ -49,4 +49,6 @@
   cursor: pointer;
 }
 
-
+.hidden-radio {
+  display: none;
+}

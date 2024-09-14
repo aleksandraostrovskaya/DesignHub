@@ -19,6 +19,11 @@ const HomePage = () => {
     "By color scheme": [],
     "By popularity": [],
   });
+  const [sortOption, setSortOption] = useState({
+    date: '',
+    alphabet: '',
+    popularity: '',
+  });
 
   const fetchProjects = async () => {
     try {
@@ -103,8 +108,36 @@ const HomePage = () => {
     );
   });
 
-  const newProjects = filteredProjects.filter(project => project.category === 'new');
-  const topProjects = filteredProjects.filter(project => project.category === 'top');
+  const handleSortChange = (newSortOption) => {
+    setSortOption(newSortOption);
+  };
+
+  const sortedProjects = [...filteredProjects].sort((a, b) => {
+    if (sortOption.date) {
+      const dateA = new Date(a.posteddate);
+      const dateB = new Date(b.posteddate);
+      return sortOption.date === 'asc' ? dateA - dateB : dateB - dateA;
+    }
+
+    if (sortOption.alphabet) {
+      const titleA = a.title.toLowerCase();
+      const titleB = b.title.toLowerCase();
+      return sortOption.alphabet === 'asc' ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
+    }
+
+    if (sortOption.popularity) {
+      if (sortOption.popularity === 'likes') {
+        return b.likes - a.likes;
+      } else if (sortOption.popularity === 'views') {
+        return b.views - a.views;
+      }
+    }
+
+    return 0;
+  });
+
+  const newProjects = sortedProjects.filter(project => project.category === 'new');
+  const topProjects = sortedProjects.filter(project => project.category === 'top');
 
 
   return (
@@ -131,7 +164,7 @@ const HomePage = () => {
                 <button className="tags__tag"># Landscapes</button>
                 <button className="tags__tag"># Architecture</button>
               </div>
-              <Sort name="Sort Images" />
+              <Sort name="Sort Images" onSortChange={handleSortChange}/>
             </div>
 
             <h2 className="title">New projects</h2>
