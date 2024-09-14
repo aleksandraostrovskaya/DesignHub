@@ -88,7 +88,7 @@
 	border-radius: 51px;
 	padding: 16px 28px;
 	background-color: #efefef;
-	width: 454px;
+	width: clamp(9.375rem, 0.804rem + 35.16vw, 29.375rem);
 	height: 44px;
 	font-size: 16px;
 	color: #999;
