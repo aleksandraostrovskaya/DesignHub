@@ -3,6 +3,7 @@ import HomePage from './pages/homePage/HomePage';
 import VacanciesPage from './pages/vacanciesPage/VacanciesPage'
 import SupportPage from './pages/supportPage/SupportPage';
 import EducationPage from './pages/educationPage/EducationPage';
+import ContactPage from './pages/contactPage/ContactPage';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path='/vacancies' element={<VacanciesPage/>} />
         <Route path='/education' element={<EducationPage/>} />
         <Route path='/support' element={<SupportPage/>} />
+        <Route path='/contact' element={<ContactPage/>} />
       </Routes>
       </BrowserRouter>
     </div>

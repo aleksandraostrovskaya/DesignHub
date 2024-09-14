@@ -26,7 +26,7 @@ function SupportPage() {
       <main>
         <Header postSearchContent={postSearchContent} />
         <Banner text="Support" />
-        <SearchContact text="Contact Us" />
+        <SearchContact link="/contact" text="Contact Us"/>
         <section className="information-section">
           <div className="information-row">
             <div className="info-card">
