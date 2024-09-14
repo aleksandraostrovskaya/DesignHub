@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	position: relative;
-	margin-top: -20px;
+	margin-top: -20px !important;
 	z-index: 1; 
 }
 
@@ -39,7 +39,7 @@
 	border-radius: 51px;
 	padding: 16px 28px;
 	background-color: #efefef;
-	width: 523px;
+	width: clamp(22.375rem, 17.955rem + 18.13vw, 32.688rem);
 	height: 44px;
 	font-size: 16px;
 	color: #999;
