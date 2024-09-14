@@ -1,7 +1,6 @@
 {
   "name": "design-hub",
   "version": "0.1.0",
-  "homepage": "https://aleksandraostrovskaya.github.io/DesignHub",
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
