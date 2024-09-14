@@ -1,82 +1,153 @@
-.main {
-    padding-top: 28px;
-    padding-bottom: 116px;
-  }
-
-
-/* Information Section */
-.information-section {
-    margin: 24px auto;
-    padding: 0 36px; 
+.parent-container {
+    position: relative;
+    width: 100%;
+    height: auto;
 }
 
-.information-row {
-    display: flex;
-	align-items: center;
-	justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.info-card {
-    width: auto;
-    padding: 24px;
-    flex: 1;
-    background: #F8F8F8;
-    border-radius: 4px;
-    border: 1px solid #C7C7C7;
-    margin-right: 24px;
-}
-
-.info-card:hover {
-    transform: scale(1.05);
-}
-
-.info-card h2 {
-    margin-bottom: 10px;
-}
-
-.info-card p {
-    color: #666;
-}
-
-/* Questions Section */
-.questions-section {
-    margin: 0 auto 58px auto;
-    padding: 36px;
-}
-
-.question-main, .question {
-    width: auto;
-    padding: 24px;
-    margin: 0 auto 24px auto;
-    border-radius: 4px;
-    border: 1px solid #C7C7C7;
+.banner-container {
     position: relative;
 }
 
-.question-main::after, .question::after {
-    content: "";
-    width: 16px;
-    height: 16px;
-    background-image: url('../../img/icon/Vector.svg');
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 26.1px;
-    top: 26.1px;
+.filter-education, .search-education {
+    position: relative;
+    padding: 16px 28px;
+    z-index: 1;
 }
 
-.question-main p {
-    margin-top: 24px;
-    color: #666;
+.filter-education button, .blue-search, .sort-search {
+    width: 248px;
+    height: 44px;
+    border-radius: 51px;
+    border: 2px solid transparent;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.42px;
 }
 
-.question p {
-    color: #666;
+.filter-education button {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    bottom: 35px;
+    z-index: 1; 
+    margin-right: 16px;
 }
 
-
-Footer {
-    margin-top: 183px;
+.filter-education button:hover {
+    border: 2px solid #0D0D0D;
+    transition: all .3s linear;
 }
 
+.search-education input {
+    width: 523px;
+    height: 44px;
+    padding: 16px 28px;
+    border-radius: 51px;
+    border: 1px solid #DDDDDD;
+    background-color: #EFEFEF;
+    margin-right: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.42px;
+    text-align: left;
+}
 
+.blue-search {
+    background-color: #40A6FF; 
+    color: #fff;   
+}
+
+.sort-search {
+    float: right;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 28px;
+    gap: 8px;
+}
+
+.aside {
+    margin-right: 16px;
+}
+
+.results-count {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 16px;
+}
+
+.articles-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 32px;
+    gap: 8px;
+}
+
+.article-item {
+    display: flex;
+    flex-direction: column;
+    width: 353px;
+    height: 319px;
+}
+
+.logo {
+    width: 353px;
+    height: 244px;
+    border-radius: 4px;
+}
+
+.title-and-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.title-and-icon h3 {
+    margin-right: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.articles-section p, span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.86px;
+    text-align: left;
+}
+
+.ancillary-icon {
+    width: 24px; 
+    height: 24px;
+}
+
+.article-info img, span {
+    margin-right: 4px;    
+}
+
+.days {
+    margin-left: 16px;    
+}
+
+.ancillary-icon {
+    display: flex;
+    margin-left: 8px;    
+}
+
+.article-item .description_real {
+    margin-top: 14px; 
+}
+  
+.article-item p.courses {
+    margin-top: 14px; 
+}
+
+.article-info {
+    margin-top: 14px;
+}

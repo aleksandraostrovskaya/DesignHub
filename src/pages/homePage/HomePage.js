@@ -6,6 +6,7 @@ import ProjectList from "../../сomponents/projectList/ProjectsList"
 import Sort from "../../сomponents/sort/Sort"
 import Footer from "../../сomponents/footer/Footer"
 import ProjectModal from "../../сomponents/projectModal/ProjectModal"
+import bellIcon from '../../img/icon/bell.svg';
 
 import projectImgOne from '../../img/project_one.jpg'
 import projectImgTwo from '../../img/project_two.jpg'
@@ -116,11 +117,19 @@ const HomePage = () => {
 	const handleCloseModal = () => {
 		setSelectedProject(null);
 	}
+
+	const postSearchContent = (
+		<>
+		  <img src={bellIcon} alt="bell" />
+		  <button className="header__login">Login</button>
+		  <button className="header__register">Registration</button>
+		</>
+	  );
 		
 	return (
     <>
-      <Header />
-      <Banner />
+      <Header postSearchContent={postSearchContent} />
+      <Banner text="Gorgeous long inscription"/>
 
       <main className="main">
         <div className="container container--flex">

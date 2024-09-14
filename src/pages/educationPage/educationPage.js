@@ -1,92 +1,226 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Header from '../../сomponents/header/Header';
+import Banner from '../../сomponents/banner/Banner';
+import Footer from '../../сomponents/footer/Footer';
+import Filter from '../../сomponents/filter/Filter';
+import MoreVert from '../../img/icon/more_vert.svg';
+import Eye from '../../img/icon/Eye.svg';
+import bellIcon from '../../img/icon/bell.svg';
+import WebDisgn from '../../img/Web Design.jpg';
+import AIDevelop from '../../img/AI Deleloment.jpg';
+import VideoTutoria from '../../img/Video Tutoria.jpg';
+import Webinar from '../../img/Webinar.jpg';
+import Finances from '../../img/How to Improve.jpg';
+import Fundamentals from '../../img/Fundamentals.jpg';
+import Introduction from '../../img/Introduction.jpg';
+import DigitalMarketing from '../../img/Digital Marketing.jpg';
+import Overview from '../../img/Overview.jpg';
+
+
 import './educationPage.css';
-import HeaderSupport from '../../сomponents/headerSupport/HeaderSupport'
-import BannerSupport from '../../сomponents/bannerSupport/BannerSupport'
-import Footer from '../../сomponents/footer/Footer'
-import SearchContact from '../../сomponents/searchContact/SearchContact'
 
+const filterData = [
+  {
+    title: 'By Category',
+    items: ['Technologies', 'Design', 'Marketing', 'Finance & Business', 'Lifestyle & Travel', 'Sports & Fitness', 'Real Estate & Housing'],
+  },
+  {
+    title: 'By Content Type',
+    items: ['Text Articles', 'Videos', 'Podcasts', 'Case Studies', 'Slideshows', 'White Papers', 'Webinars'],
+  },
+];
 
+const articles = [
+  {
+    img: WebDisgn,
+    title: 'Web Design Basics for Beginners',
+    description: 'Articles/ Design',
+    icon: Eye,
+    amount: '660',
+    days: '1 day ago',
+    ancillary: MoreVert,
+  },
+  {
+    img: AIDevelop,
+    title: 'AI Development Predictions for 2025',
+    description: 'Articles/ Design',
+    icon: Eye,
+    amount: '660',
+    days: '1 day ago',
+    ancillary: MoreVert,
+  },
+  {
+    img: Finances,
+    title: 'How to Improve Personal Finances with Technology',
+    description: 'Videos/ Finances',
+    icon: Eye,
+    amount: '660',
+    days: '1 day ago',
+    ancillary: MoreVert,
+  },
+];
+
+const videos = [
+  {
+    img: VideoTutoria,
+    title: 'Video Tutorial on UX/UI Design Fundamentals',
+    description: 'Videos/ Design',
+    icon: Eye,
+    amount: '660',
+    days: '1 day ago',
+    ancillary: MoreVert,
+  },
+  {
+    img: Webinar,
+    title: 'Webinar: Strategies for a Successful Start in Marketing',
+    description: 'Videos/ Design',
+    icon: Eye,
+    amount: '660',
+    days: '1 day ago',
+    ancillary: MoreVert,
+  },
+  {
+    img: Overview,
+    title: 'Overview of New Health & Fitness Technologies',
+    description: 'Videos/ Finances',
+    icon: Eye,
+    amount: '660',
+    days: '1 day ago',
+    ancillary: MoreVert,
+  },
+];
+
+const courses = [
+  {
+    img: Fundamentals,
+    title: 'Fundamentals of UX/UI Design for Beginners',
+    description: 'Learn the principles of user experience and\n interface design, and how to create user-\nfriendly and visually appealing interfaces.',
+    courses: 'Courses',
+    icon: Eye,
+    amount: '660',
+    days: '1 day ago',
+    ancillary: MoreVert,
+  },
+  {
+    img: Introduction,
+    title: 'Introduction to Artificial Intelligence and Machine Learning',
+    description: 'Gain basic knowledge of AI and machine learning, including practical examples and\n applications.',
+    courses: 'Courses',
+    icon: Eye,
+    amount: '660',
+    days: '1 day ago',
+    ancillary: MoreVert,
+  },
+  {
+    img: DigitalMarketing,
+    title: 'Digital Marketing Strategies for Small Businesses',
+    description: 'Discover how to effectively promote your\n business online using modern tools and digital\n marketing techniques.',
+    courses: 'Courses',
+    icon: Eye,
+    amount: '660',
+    days: '1 day ago',
+    ancillary: MoreVert,
+  },
+];
+
+const truncateText = (text, maxLength) => {
+  return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+};
 
 function EducationPage() {
+  const [activeSection, setActiveSection] = useState('');
+
+  const getResultsCount = () => {
+    switch (activeSection) {
+      case 'articles':
+        return articles.length;
+      case 'videos':
+        return videos.length;
+      case 'courses':
+        return courses.length;
+      default:
+        return 0;
+    }
+  };
+
+  const getSectionContent = () => {
+    const sectionData = {
+      articles,
+      videos,
+      courses,
+    }[activeSection];
+
+    if (!sectionData) return <p>Please select a section to see content</p>;
+
+    return sectionData.map((item, index) => (
+      <div key={index} className="article-item">
+        <img className="logo" src={item.img} alt={item.title} />
+        <div className="title-and-icon">
+          <h3>{truncateText(item.title, 38)}</h3> 
+          <img className="ancillary-icon" src={item.ancillary} alt="More options" />
+        </div>
+        <p className="description">
+          {item.description.split('\n').map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
+        {item.courses && <p className="courses">{item.courses}</p>}
+        <div className="article-info">
+          <img src={item.icon} alt="views" />
+          <span>{item.amount}</span>
+          <span className="days">{item.days}</span>
+        </div>
+      </div>
+    ));
+  };
+
+  const handleSectionClick = (section) => {
+    setActiveSection(section);
+  };
+
+  const postSearchContent = (
+		<>
+		  <img src={bellIcon} alt="bell" />
+		  <button className="header__login">Login</button>
+		  <button className="header__register">Registration</button>
+		</>
+	  );
+
   return (
-    <>
-      <main> 
-        <HeaderSupport/>
-        <BannerSupport />
-        <SearchContact/>
+    <div>
+      <Header postSearchContent={postSearchContent} />
+      <div className="parent-container">
+        <Banner className="banner" text="Gorgeous long inscription"/>
+        <div className="filter-education">
+          <button onClick={() => handleSectionClick('articles')}>Articles</button>
+          <button onClick={() => handleSectionClick('videos')}>Videos</button>
+          <button onClick={() => handleSectionClick('courses')}>Courses</button>
+        </div>
+      </div>
 
-          <section className="information-section">
-            <div className="information-row">
-              <div className="info-card">
-                <h2>Platform Basics</h2>
-                <p>Key articles to help you get started with the platform and learn its features.</p>
-              </div>
-              <div className="info-card">
-                <h2>Account, Profile, and Community</h2>
-                <p>Learn how to manage your account, customize your profile, and interact with other users.</p>
-              </div>
-              <div className="info-card">
-                <h2>Creating, Editing, and Publishing</h2>
-                <p>Documentation on setting up projects, creating content, and promoting it on the platform.</p>
-              </div>
-            </div>
-            <div className="information-row">
-              <div className="info-card">
-                <h2>Files and Resources</h2>
-                <p>How to attach files, images, and other resources <br />to your projects.</p>
-              </div>
-              <div className="info-card">
-                <h2>Safety and Legal Center</h2>
-                <p>Information about account security, data privacy, and legal aspects of using the platform.</p>
-              </div>
-              <div className="info-card">
-                <h2>Subscriptions and Payments</h2>
-                <p>Information about subscriptions, paid features, <br />and payment methods.</p>
-              </div>
-            </div>
-              <div className="information-row">
-              <div className="info-card">
-                <h2>Subscriptions and Payments</h2>
-                <p>Information about subscriptions, paid features, <br />and payment methods.</p>
-              </div>
-              <div className="info-card">
-                <h2>Livestreaming and Webinars</h2>
-                <p>Learn how to use livestreaming features and participate in webinars.</p>
-              </div>
-              <div className="info-card">
-                <h2>Troubleshooting and FAQs</h2>
-                <p>A section with frequently asked questions and solutions to common issues.</p>
-              </div>
-            </div>
-          </section>
+      <div className="search-education">
+        <input type="search" placeholder="Search" />
+        <button className="blue-search">Search</button>
+        <button className="sort-search">Sort materials</button>
+      </div>
 
-          <section className="questions-section">
-            <div className="question-main">
-              <h2>What features are available with Pro?</h2>
-              <p>A section with frequently asked questions and solutions to common issues. . A section with frequently asked questions and solutions to common issues.A section with<br /> frequently asked questions and solutions to common issues.A section with frequently asked questions and solutions to common issues.</p>
-            </div>
-            <div className="question">
-              <h2>How can I change or update my Adobe ID?</h2>
-            </div>
-            <div className="question">
-              <h2>How can I follow interesting creatives?</h2>
-            </div>
-            <div className="question">
-              <h2>How do I switch from a business profile to a personal profile in Adobe ID?</h2>
-            </div>
-            <div className="question">
-              <h2>What should I do if I can’t log into my account?</h2>
-            </div>
-            <div className="question">
-              <h2>How do I edit a draft or a published project?</h2>
-            </div>
-            <div className="question">
-              <h2>How can I protect myself from job scams?</h2>
-            </div>
-          </section>
-          <Footer />
-      </main>
-    </>
+      <div className="content-wrapper">
+        <aside className="aside">
+          <Filter sections={filterData} />
+        </aside>
+        <div className="results-count">
+          <p>{getResultsCount()} results</p>
+          <div className="articles-section">
+            {getSectionContent()}
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
   );
 }
 

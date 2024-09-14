@@ -8,6 +8,7 @@ import VacanciesList from '../../vacanciesList/VacanciesList'
 
 import './vacanciesPage.css';
 import companyLogo from '../../img/authorPhoto.jpg'
+import bellIcon from '../../img/icon/bell.svg';
 
 const VacanciesPage = () => {
 
@@ -66,10 +67,18 @@ const VacanciesPage = () => {
   //   // Логика сортировки
   // };
 
+  const postSearchContent = (
+		<>
+		  <img src={bellIcon} alt="bell" />
+		  <button className="header__login">Login</button>
+		  <button className="header__register">Registration</button>
+		</>
+	  );
+
 	return (
 		<>
-			<Header/>
-			<Banner/>
+			<Header postSearchContent={postSearchContent} />
+			<Banner text="Gorgeous long inscription"/>
 			<SearchBar onSearchChange={handleSearch}/>
 
 			<main className='main'>

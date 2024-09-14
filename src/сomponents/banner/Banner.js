@@ -1,15 +1,20 @@
 import React from 'react';
 import './banner.css';
 
-const Banner = () => {
+const Banner = ({ text }) => {
   return (
     <div className="banner">
       <div className="banner__image"></div>
       <div className="banner__overlay">
-        <h1 className="banner__text">Gorgeous long inscription</h1>
+        <h1 className="banner__text">{text}</h1>
       </div>
     </div>
   );
 };
 
 export default Banner;
+
+
+
+
+
