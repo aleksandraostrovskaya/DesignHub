@@ -78,6 +78,7 @@
   width: 52px;
   height: 52px;
   margin-right: 13px;
+  object-fit: cover;
 }
 
 .authorName {

@@ -31,6 +31,7 @@ const ProjectModal = ({ project, onClose }) => {
     }
   }, [isClosing, onClose]);
 
+  const IMAGE_BASE_PATH = '/images/';
 
   return (
     <div className={`${styles.modalOverlay} ${isClosing ? styles.fadeOut : ''}`}>
@@ -42,13 +43,13 @@ const ProjectModal = ({ project, onClose }) => {
         <div className={styles.modalHeader}>
           <h2 className={styles.modalTitle}>{project.title}</h2>
           <p className={styles.modalPublished}>
-            Published {project.daysAgo} days ago
+            Published {project.formattedDate} days ago
           </p>
         </div>
 
         <div className={styles.modalContent}>
           <img
-            src={project.image}
+            src={process.env.PUBLIC_URL + IMAGE_BASE_PATH + project.image}
             alt={project.title}
             className={styles.modalImage}
           />
@@ -56,7 +57,7 @@ const ProjectModal = ({ project, onClose }) => {
           <div className={styles.modalDetails}>
             <div className={styles.modalAuthor}>
               <img
-                src={project.authorAvatar}
+                src={process.env.PUBLIC_URL + IMAGE_BASE_PATH + project.authoravatar}
                 alt={project.author}
                 className={styles.authorAvatar}
               />
