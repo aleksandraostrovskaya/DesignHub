@@ -16,7 +16,6 @@ import Introduction from '../../img/Introduction.jpg';
 import DigitalMarketing from '../../img/Digital Marketing.jpg';
 import Overview from '../../img/Overview.jpg';
 
-
 import './educationPage.css';
 
 const filterData = [
@@ -128,7 +127,7 @@ const truncateText = (text, maxLength) => {
 };
 
 function EducationPage() {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('articles'); 
 
   const getResultsCount = () => {
     switch (activeSection) {
@@ -143,7 +142,7 @@ function EducationPage() {
     }
   };
 
-  const getSectionContent = () => {
+const getSectionContent = () => {
     const sectionData = {
       articles,
       videos,
@@ -182,12 +181,12 @@ function EducationPage() {
   };
 
   const postSearchContent = (
-		<>
-		  <img src={bellIcon} alt="bell" />
-		  <button className="header__login">Login</button>
-		  <button className="header__register">Registration</button>
-		</>
-	  );
+    <>
+      <img src={bellIcon} alt="bell" />
+      <button className="header__login">Login</button>
+      <button className="header__register">Registration</button>
+    </>
+  );
 
   return (
     <div>

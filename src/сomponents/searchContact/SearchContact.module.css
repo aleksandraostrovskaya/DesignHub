@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center; 
     margin-top: 54px;
+    gap: 20px; 
 }
 
 .searchBar, .searchBlue, .contactButton {
@@ -10,32 +11,30 @@
     align-items: center;
     padding: 16px 28px;
     border-radius: 51px;
+    margin-right: 20px;
     font-size: 16px;
     color: #999;
-    margin-right: 36px;
+    height: 44px; 
 }
 
 .searchBar {
     width: 800px;
-    height: 44px;  
     border: 1px solid #ddd;
     background-color: #efefef;
 }
 
 .searchBlue, .contactButton {
     width: 248px;
-    height: 44px;
-    margin-bottom: 15px;
+    border: 1px solid #ddd;
 }
 
 .searchBlue {
     background-color: #40A6FF;
-    border: 1px solid  #40A6FF;
-    color: #ffff;
+    border-color: #40A6FF;
+    color: #fff;
 }
 
 .contactButton {
     background-color: #EFEFEF;
-    border: 1px solid #DDD;
-    align-items: center;
+    border-color: #DDD;
 }

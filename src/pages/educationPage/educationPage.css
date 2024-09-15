@@ -22,6 +22,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 20.42px;
+    cursor: pointer;
 }
 
 .filter-education button {
@@ -29,7 +30,7 @@
     align-items: flex-start;
     position: relative;
     bottom: 35px;
-    z-index: 1; 
+    z-index: 1;
     margin-right: 16px;
 }
 
@@ -63,16 +64,17 @@
 
 .content-wrapper {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start; 
     padding: 16px 28px;
-    gap: 8px;
+    gap: 16px; 
 }
 
 .results-count {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 16px;
+    margin-top: 0; 
+    padding: 0; 
 }
 
 .articles-section {
@@ -80,15 +82,17 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-top: 32px;
-    gap: 8px;
+    gap: 8px; 
+    padding: 0; 
+    margin-top: 32px; 
 }
 
 .article-item {
     display: flex;
     flex-direction: column;
     width: 353px;
-    height: 319px;
+    height: auto; 
+    margin-bottom: 16px; 
 }
 
 .logo {
@@ -109,6 +113,10 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.description {
+    margin-bottom: 4px; 
 }
 
 .articles-section p, span {
@@ -136,14 +144,14 @@
     margin-left: 8px;    
 }
 
-.article-item .description_real {
-    margin-top: 14px; 
+.article-item .description {
+    margin-top: 10px; 
 }
   
 .article-item p.courses {
-    margin-top: 14px; 
+    margin-top: 5px; 
 }
 
 .article-info {
-    margin-top: 14px;
+    margin-top: 10px;
 }
