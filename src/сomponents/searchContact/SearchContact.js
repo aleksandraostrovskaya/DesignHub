@@ -6,7 +6,7 @@ const SearchContact = ({ text, link }) => {
   return (
     <section className={styles.searchSection}>
         <input type="text" placeholder="Search" className={styles.searchBar} />
-        <input type="search" placeholder="Search" className={styles.searchBlue} />
+        <button className={styles.searchBlue}>Search</button>
         <button className={styles.contactButton}>
           <Link to={link}>{text}</Link>
         </button>
