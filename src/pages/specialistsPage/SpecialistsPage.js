@@ -240,7 +240,7 @@ const SpecialistsPage = () => {
 	return ( 
 		<>
 		<Header />
-		<Banner />
+		<Banner text="You are capable of amazing things"/>
 		<SearchBar nameSort="Sort expert"/>
 		<main className="main">
 			<div className="container container--flex">

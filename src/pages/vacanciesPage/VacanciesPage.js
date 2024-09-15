@@ -192,7 +192,7 @@ const VacanciesPage = () => {
 	return (
 		<>
 			<Header/>
-			<Banner/>
+			<Banner text="You are capable of amazing things"/>
 			<SearchBar nameSort="Sort vacancies" />
 
 			<main className='main'>

@@ -143,7 +143,7 @@ const HomePage = () => {
   return (
     <>
       <Header/>
-      <Banner text="Gorgeous long inscription"/>
+      <Banner text="You are capable of amazing things"/>
 
       <main className="main">
         <div className="container container--flex">

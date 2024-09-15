@@ -190,9 +190,9 @@ const getSectionContent = () => {
 
   return (
     <div>
-      <Header postSearchContent={postSearchContent} />
+      <Header/>
       <div className="parent-container">
-        <Banner className="banner" text="Gorgeous long inscription"/>
+        <Banner text="You are capable of amazing things"/>
         <div className="filter-education">
           <button onClick={() => handleSectionClick('articles')}>Articles</button>
           <button onClick={() => handleSectionClick('videos')}>Videos</button>
