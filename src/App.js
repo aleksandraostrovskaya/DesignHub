@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/homePage/HomePage';
 import VacanciesPage from './pages/vacanciesPage/VacanciesPage'
 import SupportPage from './pages/supportPage/SupportPage';
-import EducationPage from './pages/educationPage/EducationPage';
+import EducationPage from './pages/educationPage/educationPage';
 import ContactPage from './pages/contactPage/ContactPage';
 import SpecialistsPage from './pages/specialistsPage/SpecialistsPage'
 
