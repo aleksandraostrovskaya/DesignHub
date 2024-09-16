@@ -21,19 +21,22 @@ const Sort = ({ name, onSortChange }) => {
       [type]: value,
     };
     
-    if (type === 'date') {
-      updatedSortOption.alphabet = '';
-      updatedSortOption.popularity = '';
-    } else if (type === 'alphabet') {
-      updatedSortOption.date = '';
-      updatedSortOption.popularity = '';
-    } else if (type === 'popularity') {
-      updatedSortOption.date = '';
-      updatedSortOption.alphabet = '';
+    // Чтобы не было ошибки на страницах где сортировка не работает
+    if (onSortChange) {
+      if (type === 'date') {
+        updatedSortOption.alphabet = '';
+        updatedSortOption.popularity = '';
+      } else if (type === 'alphabet') {
+        updatedSortOption.date = '';
+        updatedSortOption.popularity = '';
+      } else if (type === 'popularity') {
+        updatedSortOption.date = '';
+        updatedSortOption.alphabet = '';
+      }
+      
+      setSortOption(updatedSortOption);
+      onSortChange(updatedSortOption);
     }
-    
-    setSortOption(updatedSortOption);
-    onSortChange(updatedSortOption);
   };
 
   useEffect(() => {
