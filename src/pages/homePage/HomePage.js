@@ -8,6 +8,8 @@ import Footer from "../../сomponents/footer/Footer";
 import ProjectModal from "../../сomponents/projectModal/ProjectModal";
 
 import './homePage.css';
+import { useAuth0 } from "@auth0/auth0-react"
+import InfoModal from "../../сomponents/infoModal/InfoModal"
 
 const HomePage = () => {
   const [projects, setProjects] = useState([]);
@@ -24,6 +26,21 @@ const HomePage = () => {
     alphabet: '',
     popularity: '',
   });
+
+  const { isAuthenticated } = useAuth0();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+
+        setIsModalOpen(true);
+
+    }
+  }, [isAuthenticated]);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const fetchProjects = async () => {
     try {
@@ -142,14 +159,14 @@ const HomePage = () => {
 
   return (
     <>
-      <Header/>
-      <Banner text="You are capable of amazing things"/>
+      <Header />
+      <Banner text="You are capable of amazing things" />
 
       <main className="main">
         <div className="container container--flex">
           <aside className="aside">
-            <Filter 
-              sections={filterData} 
+            <Filter
+              sections={filterData}
               onFilterChange={handleFilterChange}
               onClearFilters={handleClearFilters}
               filters={filters}
@@ -164,7 +181,7 @@ const HomePage = () => {
                 <button className="tags__tag"># Landscapes</button>
                 <button className="tags__tag"># Architecture</button>
               </div>
-              <Sort name="Sort Images" onSortChange={handleSortChange}/>
+              <Sort name="Sort Images" onSortChange={handleSortChange} />
             </div>
 
             <h2 className="title">New projects</h2>
@@ -187,8 +204,13 @@ const HomePage = () => {
       {selectedProject && (
         <ProjectModal project={selectedProject} onClose={handleCloseModal} />
       )}
+
+      <InfoModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </>
-  );
+  )
 };
 
 export default HomePage;
