@@ -10,7 +10,7 @@ import SpecialistsPage from './pages/specialistsPage/SpecialistsPage'
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/DesignHub">
       <Routes>
         <Route path='/' element={<HomePage/>} />
         <Route path='/vacancies' element={<VacanciesPage/>} />
