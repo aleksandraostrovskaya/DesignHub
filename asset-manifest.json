@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/your-repo-name/static/css/main.8546a426.css",
+    "main.js": "/your-repo-name/static/js/main.474aac19.js",
+    "static/media/Introduction.jpg": "/your-repo-name/static/media/Introduction.40c7f1c08d0c2f87a246.jpg",
+    "static/media/banner_home.jpg": "/your-repo-name/static/media/banner_home.843442976dcb28f99d5d.jpg",
+    "static/media/AI Deleloment.jpg": "/your-repo-name/static/media/AI Deleloment.69ec5d0f88ab31f7f93b.jpg",
+    "static/media/Web Design.jpg": "/your-repo-name/static/media/Web Design.ebd29a44f60ba3d86e5f.jpg",
+    "static/media/Overview.jpg": "/your-repo-name/static/media/Overview.4348c96f172292f290d8.jpg",
+    "static/media/How to Improve.jpg": "/your-repo-name/static/media/How to Improve.d41fb41102f2db597330.jpg",
+    "static/media/Webinar.jpg": "/your-repo-name/static/media/Webinar.094e4107d0c39b31b0c6.jpg",
+    "static/media/Fundamentals.jpg": "/your-repo-name/static/media/Fundamentals.a3f9e0fbfc09cf7a357b.jpg",
+    "static/media/Digital Marketing.jpg": "/your-repo-name/static/media/Digital Marketing.88c8dd22bdbe29f96530.jpg",
+    "static/media/Video Tutoria.jpg": "/your-repo-name/static/media/Video Tutoria.1cd667e40d5b36f9c83e.jpg",
+    "static/media/instagram.svg": "/your-repo-name/static/media/instagram.635e49faeb615e72afb1e81de7f71aea.svg",
+    "static/media/pinterest.svg": "/your-repo-name/static/media/pinterest.8edf56a8dbb126bd410301e9e76b67b5.svg",
+    "static/media/bell.svg": "/your-repo-name/static/media/bell.54c3c7324a1492690111ecc6f7a3f34e.svg",
+    "static/media/facebook.svg": "/your-repo-name/static/media/facebook.99ac9bd430abe3c30ad7ee6448f6c889.svg",
+    "static/media/youtube.svg": "/your-repo-name/static/media/youtube.f477e0ebf9edb456450987aeee427fe4.svg",
+    "static/media/Vector.svg": "/your-repo-name/static/media/Vector.628411ca8b70678324dd.svg",
+    "static/media/arrow_right.svg": "/your-repo-name/static/media/arrow_right.fe1c749d933094d34dab988151afe5dd.svg",
+    "static/media/uiw_down.svg": "/your-repo-name/static/media/uiw_down.af12c2592899840063e1.svg",
+    "static/media/view_card.svg": "/your-repo-name/static/media/view_card.0cc2a2787661acc3bea2ed5f5d9d7313.svg",
+    "static/media/Eye.svg": "/your-repo-name/static/media/Eye.933446a1a8407422a87c42562b77cfaf.svg",
+    "static/media/like_card.svg": "/your-repo-name/static/media/like_card.35c31442541919af2bceaea351216300.svg",
+    "index.html": "/your-repo-name/index.html",
+    "static/media/more_options-gray.svg": "/your-repo-name/static/media/more_options-gray.6826de780fdd242e0dbcb120586cc7ab.svg",
+    "static/media/more_options.svg": "/your-repo-name/static/media/more_options.164fd0d33a69f9e8c832949010a0738f.svg",
+    "static/media/more_vert.svg": "/your-repo-name/static/media/more_vert.164fd0d33a69f9e8c832949010a0738f.svg",
+    "static/media/favorite_star.svg": "/your-repo-name/static/media/favorite_star.b20a3c8f42a2381673934eff4289a70f.svg",
+    "static/media/close-btn.svg": "/your-repo-name/static/media/close-btn.9d44ae6068560a0406dabf4218578cf3.svg",
+    "main.8546a426.css.map": "/your-repo-name/static/css/main.8546a426.css.map",
+    "main.474aac19.js.map": "/your-repo-name/static/js/main.474aac19.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8546a426.css",
+    "static/js/main.474aac19.js"
+  ]
+}
