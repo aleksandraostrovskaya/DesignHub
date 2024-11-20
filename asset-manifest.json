@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DesignHub/static/css/main.4daec6af.css",
-    "main.js": "/DesignHub/static/js/main.ac016118.js",
+    "main.js": "/DesignHub/static/js/main.c74b6539.js",
     "static/media/Introduction.jpg": "/DesignHub/static/media/Introduction.40c7f1c08d0c2f87a246.jpg",
     "static/media/banner_home.jpg": "/DesignHub/static/media/banner_home.843442976dcb28f99d5d.jpg",
     "static/media/AI Deleloment.jpg": "/DesignHub/static/media/AI Deleloment.69ec5d0f88ab31f7f93b.jpg",
@@ -30,10 +30,10 @@
     "static/media/favorite_star.svg": "/DesignHub/static/media/favorite_star.b20a3c8f42a2381673934eff4289a70f.svg",
     "static/media/close-btn.svg": "/DesignHub/static/media/close-btn.9d44ae6068560a0406dabf4218578cf3.svg",
     "main.4daec6af.css.map": "/DesignHub/static/css/main.4daec6af.css.map",
-    "main.ac016118.js.map": "/DesignHub/static/js/main.ac016118.js.map"
+    "main.c74b6539.js.map": "/DesignHub/static/js/main.c74b6539.js.map"
   },
   "entrypoints": [
     "static/css/main.4daec6af.css",
-    "static/js/main.ac016118.js"
+    "static/js/main.c74b6539.js"
   ]
 }
